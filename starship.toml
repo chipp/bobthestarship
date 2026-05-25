@@ -1,0 +1,128 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[](#CCCCCC)\
+$os\
+$username\
+[](bg:#999999 fg:#CCCCCC)\
+$hostname\
+[](bg:#333333 fg:#999999)\
+$directory\
+[](fg:#333333 bg:#005FAF)\
+$c\
+$gradle\
+$nodejs\
+$rust\
+$python\
+$ruby\
+[](fg:#005FAF bg:#48B4FB)\
+$docker_context\
+[](fg:#48B4FB bg:#ADDC10)\
+$git_branch\
+$git_status\
+[ ](fg:#ADDC10)\
+"""
+
+right_format = """$status$time"""
+
+[username]
+show_always = false
+style_user = "bg:#CCCCCC fg:#255E87 bold"
+style_root = "bg:#CCCCCC fg:#255E87 bold"
+format = '[$user ]($style)'
+disabled = false
+
+[os]
+style = "bg:#CCCCCC fg:#255E87"
+disabled = true
+
+[hostname]
+ssh_only = true
+style = "bg:#999999 fg:#255E87"
+format = '[ @$hostname ]($style)'
+trim_at = "."
+disabled = false
+
+[directory]
+style = "bg:#333333 fg:#FFFFFF"
+format = "[ $path ]($style)"
+truncation_length = 1
+truncation_symbol = "‥/"
+
+[status]
+style = "bg:#333333 fg:#CCCCCC"
+success_symbol = "♥ "
+not_found_symbol = "[ ](fg:#AF87FF bg:#333333)"
+not_executable_symbol = "[ ](fg:#FF5F5F bg:#333333)"
+sigint_symbol = "[ ](fg:#FFAF00 bg:#333333)"
+signal_symbol = "[󱐋 ](fg:#FFAF00 bg:#333333)"
+symbol = "[ ](fg:#FF5F5F bg:#333333)"
+map_symbol = true
+disabled = false
+format = '[](fg:#333333)[ $symbol ]($style)'
+
+[time]
+disabled = false
+time_format = "%b %d %R"
+style = "bg:#333333 fg:#CCCCCC"
+format = '[$time ]($style)'
+
+[c]
+symbol = " "
+style = "bg:#005FAF fg:#CCCCCC"
+format = '[ $symbol ($version) ]($style)'
+
+[cpp]
+symbol = " "
+style = "bg:#005FAF fg:#CCCCCC"
+format = '[ $symbol ($version) ]($style)'
+
+[docker_context]
+symbol = " "
+style = "bg:#48B4FB fg:#FFFFFF"
+format = '[ $symbol $context ]($style)'
+
+[git_branch]
+symbol = ""
+style = "bg:#ADDC10 fg:#0C4801"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "bg:#ADDC10 fg:#0C4801"
+format = '[$all_status$ahead_behind]($style)'
+conflicted = "= "
+ahead = " "
+behind = " "
+diverged = "⇕ "
+untracked = " "
+stashed = " "
+modified = " "
+staged = " "
+renamed = "» "
+deleted = "✘ "
+
+[gradle]
+symbol = ""
+style = "bg:#005FAF fg:#CCCCCC"
+format = '[ $symbol ($version) ]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#005FAF fg:#CCCCCC"
+format = '[ $symbol ($version) ]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#005FAF fg:#CCCCCC"
+format = '[ $symbol ($version) ]($style)'
+
+[python]
+symbol = ""
+style = "bg:#005FAF fg:#CCCCCC"
+format = '[ $symbol ($version) ]($style)'
+
+[ruby]
+symbol = ""
+style = "bg:#005FAF fg:#CCCCCC"
+format = '[ $symbol ($version) ]($style)'
+detect_variables = []
